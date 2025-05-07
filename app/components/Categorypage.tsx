@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import { exploreByCategory } from "../landing/config/config";
 import { IoIosArrowRoundForward } from "react-icons/io";
 

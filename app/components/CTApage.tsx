@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import Image from 'next/image'
-import { dastopcompany } from '../../'
+// import { dastopcompany } from '../../public/Dashboard Company.png'
 
 
 const CTApage = () => {

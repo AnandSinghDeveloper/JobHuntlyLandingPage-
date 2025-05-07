@@ -13,7 +13,6 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
-  SheetTrigger,
 } from "@/components/ui/sheet";
 
 interface NextPageProps {
@@ -56,10 +55,8 @@ const Landing: NextPage<NextPageProps> = (props) => {
             Sign Up
           </Button>
         </div>
-
-        <Sheet>
-          <SheetTrigger>
-            <div className="md:hidden">
+        
+        <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-white focus:outline-none"
@@ -76,33 +73,39 @@ const Landing: NextPage<NextPageProps> = (props) => {
                 />
               </button>
             </div>
-          </SheetTrigger>
-          <SheetContent
-            side="right"
-            className="w-[200px] bg-[#2a3142]  text-white p-5 rounded-tl-lg rounded-bl-lg"
-          >
-            <SheetHeader className="bg-[#353c4ce3] p-2 mt-3 rounded-lg ">
-              JobHuntly
-            </SheetHeader>
 
-            <ul className="flex flex-col gap-4">
-              {Headeritem.map((item) => (
-                <li key={item.id}>
-                  <a className="block py-2 hover:text-blue-400">{item.name}</a>
-                </li>
-              ))}
-              <Separator className="" />
-              <div className="flex flex-col gap-3 pt-2">
-                <Button variant="ghost" className="text-blue-400 w-full">
-                  Login
-                </Button>
-                <Button className="bg-[#4640DE] hover:bg-[#3934C2] text-white w-full">
-                  Sign Up
-                </Button>
-              </div>
-            </ul>
-          </SheetContent>
-        </Sheet>
+         {
+           mobileMenuOpen && (
+            <Sheet open={mobileMenuOpen} onOpenChange={() => setMobileMenuOpen(false)}>
+         
+            <SheetContent
+              side="right"
+              className="w-[200px] bg-[#2a3142]  text-white p-5 rounded-tl-lg rounded-bl-lg"
+            >
+              <SheetHeader className="bg-[#353c4ce3] p-2 mt-3 rounded-lg ">
+                JobHuntly
+              </SheetHeader>
+  
+              <ul className="flex flex-col gap-4">
+                {Headeritem.map((item) => (
+                  <li key={item.id}>
+                    <a className="block py-2 hover:text-blue-400">{item.name}</a>
+                  </li>
+                ))}
+                <Separator className="" />
+                <div className="flex flex-col gap-3 pt-2">
+                  <Button variant="ghost" className="text-blue-400 w-full">
+                    Login
+                  </Button>
+                  <Button className="bg-[#4640DE] hover:bg-[#3934C2] text-white w-full">
+                    Sign Up
+                  </Button>
+                </div>
+              </ul>
+            </SheetContent>
+          </Sheet>
+           )
+         }
 
        
 

@@ -7,13 +7,14 @@ import Companypage from "../components/Companypage";
 import Categorypage from "../components/Categorypage";
 import {IoIosArrowRoundForward} from "react-icons/io";
 import CTApage from "../components/CTApage";
+import FeaturedJob from "../components/FeaturedJob";
 
 
 const page = () => {
   return (
     <div className="text-white px-4  sm:px-4">
       <div className="mt-10 flex flex-col gap-5 sm:w-[200px]  md:w-[400px] lg:w-[400px]">
-        <h1 className="lg:text-6xl text-5xl  font-bold tracking-tight">
+        <h1 className="lg:text-7xl text-5xl  font-bold tracking-tight">
           {" "}
           Discover more then
         </h1>
@@ -62,6 +63,16 @@ const page = () => {
       </div>
       <div className="mt-10 CTA-container">
         <CTApage />
+      </div>
+      <div className="FeatureJob-container mt-10">
+        <div className="flex justify-between items-center">
+        <h2 className="text-3xl font-bold"> Featured <span className="text-[#26A4FF]">Jobs</span></h2>
+        
+          <h2 className=" hidden lg:flex gap-2 text-[#4640de]">Show all jobs <span className=" text-2xl"><IoIosArrowRoundForward /></span></h2>
+        
+        </div>
+        <FeaturedJob />
+      <h2 className=" lg:hidden mt-3 flex gap-2 text-[#4640de]">Show all jobs <span className=" text-2xl"><IoIosArrowRoundForward /></span></h2>
       </div>
     </div>
   );

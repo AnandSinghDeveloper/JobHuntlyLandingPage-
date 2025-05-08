@@ -5,7 +5,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Categorypage = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-10 text-black">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-10  text-black">
       {exploreByCategory.map((item) => {
         return (
           <div

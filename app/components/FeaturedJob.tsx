@@ -34,9 +34,9 @@ const FeaturedJob = () => {
               </p>
             </div>
             <div>
-              {item.workType.map((workType)=>{
+              {item.workType.map((workType,inx)=>{
                 return(
-                  <button className={`${workType=='Marketing'? 'bg-[#FDF3EB] text-[#e59b1b]' :null} ${workType=='Technology'? 'bg-[#fedeff] text-[#C173C6]' :null} ${workType=='Design'? 'bg-[#EFFAF7] text-[#6ED3B8]' :null} ${workType=='Business'? 'bg-[#EDECFC] text-[#5550E0]' :null} ml-2 rounded-3xl text-xm py-1 mt-2 bor px-4 text-start`}>
+                  <button key={inx} className={`${workType=='Marketing'? 'bg-[#FDF3EB] text-[#e59b1b]' :null} ${workType=='Technology'? 'bg-[#fedeff] text-[#C173C6]' :null} ${workType=='Design'? 'bg-[#EFFAF7] text-[#6ED3B8]' :null} ${workType=='Business'? 'bg-[#EDECFC] text-[#5550E0]' :null} ml-2 rounded-3xl text-xm py-1 mt-2 bor px-4 text-start`}>
                     {workType}
                   </button>
                 )

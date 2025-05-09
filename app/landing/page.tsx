@@ -10,9 +10,10 @@ import CTApage from "../components/CTApage";
 import FeaturedJob from "../components/FeaturedJob";
 import LaetestJob from "../components/LaetestJob";
 
+
 const page = () => {
   return (
-    <div className=" px-4 dark:bg-[#2a3142] sm:px-4">
+    <div className=" px-4  sm:px-4">
       <div className="mt-10 flex flex-col gap-5 sm:w-[200px]  md:w-[400px] lg:w-[400px]">
         <h1 className="lg:text-7xl text-5xl  font-bold tracking-tight">
           {" "}
@@ -120,6 +121,8 @@ const page = () => {
           </span>
         </h2>
       </div>
+     
+
     </div>
   );
 };

@@ -30,7 +30,8 @@ const SearchPanal = () => {
           id="search"
           type="text"
           placeholder="Job title or keyword"
-          className="h-10 w-full sm:w-[20vw] border-b-2 min-w-[150px] max-w-[300px] placeholder:opacity-60 px-3 placeholder:text-black outline-none text-black bg-transparent"
+          className="h-10 w-full s\90 7o-p8+.[l;'.m:w-[20vw] border-b-2 border-gray-200 text-black min
+          [[tvy6upb8g;jhuf v879].9-w-[150px] max-w-[300px] placeholder:opacity-60 px-3 placeholder:text-black outline-none bg-transparent"
         />
       </div>
 
@@ -47,7 +48,7 @@ const SearchPanal = () => {
             onFocus={() => setShowLocations(true)}
             onBlur={() => setTimeout(() => setShowLocations(false), 200)}
             placeholder="Select or type location"
-            className="h-10 w-full px-3 outline-none border-b-2 text-black bg-transparent"
+            className="h-10 w-full px-3 outline-none border-b-2 border-gray-200 text-black bg-transparent"
           />
           {showLocations && (
             <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg max-h-60 overflow-auto">
@@ -72,8 +73,8 @@ const SearchPanal = () => {
         </div>
       </div>
 
-      {/* Search Button */}
-      <Button className="w-full md:w-auto sm:w-auto rounded-none  cursor-pointer  sm:mt-0 bg-[#4640DE] px-6 py-6 sm:py-2">
+      
+      <Button className="w-full md:w-auto sm:w-auto rounded-none text-white cursor-pointer  sm:mt-0 bg-[#4640DE] px-6 py-6 sm:py-2">
         Search my job
       </Button>
     </div>

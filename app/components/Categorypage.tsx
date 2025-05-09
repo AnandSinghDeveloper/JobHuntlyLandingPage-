@@ -2,37 +2,54 @@
 import React from "react";
 import { exploreByCategory } from "../landing/config/config";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const Categorypage = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-7 mt-10  text-black">
-      {exploreByCategory.map((item) => {
-        return (
-          <div
-            key={item.id}
-            className="group w-full flex  shadow-sm items-center gap-5 lg:items-start lg:flex-col h-20 lg:h-40 hover:bg-[#4640de] p-5 bg-white"
-          >
-            <h1 className="text-4xl text-[#4640de] group-hover:text-white">
-              {item.icon}
-            </h1>
-            <div className="flex flex-col gap-.5 sm:gap-1 mt-3">
-              <h1 className="text-xl font-bold w-full group-hover:text-white">
-                {item.name}
-              </h1>
-              <p className="flex items-center gap-1 text-sm opacity-50 group-hover:text-white">
-                <span className="mr-2">{item.numberOfJobs}</span>
-                {item.description}
-                <span className="hidden lg:block text-2xl ml-5">
-                  <IoIosArrowRoundForward />
-                </span>
-              </p>
-            </div>
-            <span className="lg:hidden ml-5 text-2xl group-hover:text-white">
-              <IoIosArrowRoundForward />
-            </span>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-10">
+      {exploreByCategory.map((item, index) => (
+        <motion.div
+          key={item.id}
+          className="group relative w-full flex items-center gap-4 lg:items-start lg:flex-col p-5 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-[#4640de]/30 overflow-hidden"
+          whileHover={{ 
+            y: -5,
+            backgroundColor: "#4640de",
+            transition: { duration: 0.3 }
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+        >
+          {/* Icon */}
+          <div className="text-4xl text-[#4640de] group-hover:text-white transition-colors duration-300">
+            {item.icon}
           </div>
-        );
-      })}
+
+          {/* Content */}
+          <div className="flex flex-col gap-1 lg:gap-2">
+            <h3 className="text-lg lg:text-xl font-semibold text-gray-800 dark:text-white group-hover:text-white transition-colors duration-300">
+              {item.name}
+            </h3>
+            <p className="flex items-center text-sm text-gray-600 dark:text-gray-300 group-hover:text-white/80 transition-colors duration-300">
+              <span className="font-medium mr-2">{item.numberOfJobs}</span>
+              {item.description}
+            </p>
+          </div>
+
+          {/* Arrow - Desktop */}
+          <div className="hidden lg:block absolute right-5 bottom-5 text-2xl text-gray-400 group-hover:text-white transition-colors duration-300">
+            <IoIosArrowRoundForward />
+          </div>
+
+          {/* Arrow - Mobile */}
+          <div className="lg:hidden ml-auto text-2xl text-gray-400 group-hover:text-white transition-colors duration-300">
+            <IoIosArrowRoundForward />
+          </div>
+
+          {/* Hover effect overlay */}
+          <div className="absolute inset-0 bg-[#4640de] opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" />
+        </motion.div>
+      ))}
     </div>
   );
 };

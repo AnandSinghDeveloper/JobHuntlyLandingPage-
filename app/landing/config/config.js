@@ -274,3 +274,55 @@ export const LetestJobOpen = [
     duration: "Full Time",
   },
 ];
+
+export const About = [
+  {
+    id: "companies",
+    name: "Companies",
+    path: "*",
+  },
+  {
+    id: "pricing",
+    name: "Pricing",
+    path: "*",
+  },
+  {
+    id: "terms",
+    name: "Terms",
+    path: "*",
+  },
+  {
+    id: "privacy policy",
+    name: "Privacy Policy",
+    path: "*",
+  },
+  {
+    id: "advice",
+    name: "Advice",
+    path: "*",
+  },
+];
+
+export const Resources = [
+  {
+    id: "helps docs",
+    name: "Helps Docs",
+    path: "*",
+  },
+  {
+    id: "guides",
+    name: "Guides",
+    path: "*",
+  },
+  {
+    id: "updates",
+    name: "Updates",
+    path: "*",
+  },
+  {
+    id: "contact us",
+    name: "Contact Us",
+    path: "*",
+  },
+  
+];

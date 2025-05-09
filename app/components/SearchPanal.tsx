@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { HiOutlineLocationMarker } from "react-icons/hi";
@@ -8,15 +8,20 @@ import React, { useState } from "react";
 const SearchPanal = () => {
   const [locationInput, setLocationInput] = useState("");
   const [showLocations, setShowLocations] = useState(false);
-  const locations = ["India", "United States", "United Kingdom", "Canada", "Australia"];
+  const locations = [
+    "India",
+    "United States",
+    "United Kingdom",
+    "Canada",
+    "Australia",
+  ];
 
-  const filteredLocations = locations.filter(loc =>
+  const filteredLocations = locations.filter((loc) =>
     loc.toLowerCase().includes(locationInput.toLowerCase())
   );
 
   return (
     <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 p-4 sm:p-5 bg-white  shadow-md mt-6 sm:mt-10 mb-1 w-full sm:w-[90%] md:w-[85%] lg:w-[67vw] max-w-4xl">
-      
       <div className="flex items-center w-full sm:w-auto  sm:border-b-0 sm:border-r-2 border-gray-200 pr-2 sm:pr-4">
         <Label htmlFor="search" className="cursor-pointer">
           <CiSearch className="text-black text-xl sm:text-2xl font-bold" />
@@ -29,7 +34,6 @@ const SearchPanal = () => {
         />
       </div>
 
-      
       <div className="relative flex items-center w-full sm:w-auto">
         <Label htmlFor="location" className="cursor-pointer">
           <HiOutlineLocationMarker className="text-black text-xl sm:text-2xl font-bold" />

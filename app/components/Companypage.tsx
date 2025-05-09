@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import { SiVodafone } from "react-icons/si";
 import { SiTesla } from "react-icons/si";

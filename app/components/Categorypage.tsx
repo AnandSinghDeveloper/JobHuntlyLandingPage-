@@ -5,12 +5,12 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Categorypage = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-10  text-black">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-7 mt-10  text-black">
       {exploreByCategory.map((item) => {
         return (
           <div
             key={item.id}
-            className="group w-full flex border-1 lg:border-0 items-center gap-5 lg:items-start lg:flex-col h-20 lg:h-40 hover:bg-[#4640de] p-5 bg-white"
+            className="group w-full flex  shadow-sm items-center gap-5 lg:items-start lg:flex-col h-20 lg:h-40 hover:bg-[#4640de] p-5 bg-white"
           >
             <h1 className="text-4xl text-[#4640de] group-hover:text-white">
               {item.icon}

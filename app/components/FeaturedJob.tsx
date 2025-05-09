@@ -5,12 +5,12 @@ import { BsDot } from "react-icons/bs";
 
 const FeaturedJob = () => {
   return (
-    <div className="mt-10 text-black overflow-x-auto">
-      <div className="flex gap-5 w-max lg:grid lg:grid-cols-4 lg:w-full">
+    <div className="mt-10 text-black  overflow-x-auto">
+      <div className="flex gap-5 w-max  lg:grid lg:grid-cols-4 lg:w-full">
         {FeturedJobs.map((item) => (
           <div
             key={item.id}
-            className="group w-72 lg:w-75 lg:min-w-0 flex border-1 lg:border-0  gap-2 items-start flex-col h-65  p-5 bg-white"
+            className="group w-72 lg:w-75 lg:min-w-0  flex border-1 shadow-sm  gap-2 items-start flex-col h-65  p-5 bg-white"
           >
             <div className="w-full flex items-center justify-between">
               <h1 className="text-5xl  ">{item.logo}</h1>

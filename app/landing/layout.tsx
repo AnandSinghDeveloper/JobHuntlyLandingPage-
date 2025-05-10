@@ -1,11 +1,11 @@
 "use client";
 import { NextPage } from "next";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Headeritem } from "./config/config";
 import logo from "../../public/Frame 3.png";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { HiMenuAlt2, HiMoon, HiSun, HiX } from "react-icons/hi";
+import { HiMenuAlt2, HiMoon, HiSun } from "react-icons/hi";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetHeader } from "@/components/ui/sheet";
 import { useTheme } from "next-themes";
@@ -19,19 +19,37 @@ interface NextPageProps {
 
 const Landing: NextPage<NextPageProps> = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const {  setTheme, resolvedTheme } = useTheme();
+  const {  theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+ const changetheme = useRef<HTMLDivElement>(null);
+
+  
+  console.log(theme);
+
+  useEffect(() => {
+  if (!mounted || !changetheme.current) return;
+
+  if (resolvedTheme === "dark") {
+    changetheme.current.style.backgroundColor = "#202430";
+  } else {
+    changetheme.current.style.backgroundColor = "white";
+  }
+}, [resolvedTheme, mounted]);
+
+  
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+
+
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
-  // Animation variants
+
   const navItemVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: (i: number) => ({
@@ -45,7 +63,7 @@ const Landing: NextPage<NextPageProps> = ({ children }) => {
     }),
     hover: {
       scale: 1.05,
-      color: "#60a5fa", // blue-400
+      color: "#60a5fa", 
       transition: { duration: 0.2 }
     }
   };
@@ -63,16 +81,16 @@ const Landing: NextPage<NextPageProps> = ({ children }) => {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen transition-colors duration-300 ">
-      {/* Navigation Bar */}
+    <div ref={changetheme} className="min-h-screen transition-colors duration-300 ">
+      
       <motion.nav 
-        className="container mx-auto px-4 sm:px-6 lg:px-8 h-[78px] flex justify-between items-center sticky top-0 z-50 "
+        className="container mx-auto px-4 sm:px-6 lg:px-8 h-[78px] backdrop-blur-xl flex justify-between items-center sticky top-0 z-50 "
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
         <div className="flex items-center gap-2 md:gap-7">
-          {/* Logo */}
+          
           <motion.div 
             className="flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
@@ -91,7 +109,7 @@ const Landing: NextPage<NextPageProps> = ({ children }) => {
             </span>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          
           <ul className="hidden md:flex gap-6">
             {Headeritem.map((item, i) => (
               <motion.li 
@@ -113,9 +131,9 @@ const Landing: NextPage<NextPageProps> = ({ children }) => {
           </ul>
         </div>
 
-        {/* Right Side Controls */}
+        
         <div className="flex items-center gap-4">
-          {/* Theme Toggle */}
+         
           <motion.button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -130,7 +148,7 @@ const Landing: NextPage<NextPageProps> = ({ children }) => {
             )}
           </motion.button>
 
-          {/* Desktop Auth Buttons */}
+          
           <motion.div 
             className="hidden md:flex items-center gap-2"
             initial={{ opacity: 0, x: 20 }}
@@ -177,13 +195,8 @@ const Landing: NextPage<NextPageProps> = ({ children }) => {
                   className="w-[280px] p-5"
                 >
                   <SheetHeader className="flex justify-between items-center mb-6">
-                    <span className="text-xl font-bold text-gray-800 dark:text-white">JobHuntly</span>
-                    <button 
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
-                    >
-                      <HiX size={24} className="text-gray-600 dark:text-gray-300" />
-                    </button>
+                    <span className="text-xl font-bold ">JobHuntly</span>
+                   
                   </SheetHeader>
 
                   <motion.ul 

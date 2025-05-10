@@ -31,7 +31,7 @@ const LatestJob = () => {
       {LetestJobOpen.map((item, index) => (
         <motion.div
           key={item.id}
-          className="group flex flex-col gap-4 border border-gray-100 bg-white p-6 shadow-sm sm:flex-row sm:items-start md:p-8"
+          className="group flex flex-col gap-4 border rounded-2xl border-gray-100 bg-white p-6 shadow-sm sm:flex-row sm:items-start md:p-8"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ 
@@ -62,7 +62,7 @@ const LatestJob = () => {
             {/* Job Title */}
             <motion.h2 
               className="text-lg font-bold text-gray-900 sm:text-xl relative pb-1"
-              whileHover={{ color: "#4640de" }}
+             
             >
               {item.jobRole}
               <motion.span 

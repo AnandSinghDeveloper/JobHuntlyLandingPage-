@@ -10,7 +10,7 @@ const Categorypage = () => {
       {exploreByCategory.map((item, index) => (
         <motion.div
           key={item.id}
-          className="group relative w-full flex items-center gap-4 lg:items-start lg:flex-col p-5 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-[#4640de]/30 overflow-hidden"
+          className="group relative w-full text-black flex items-center gap-4 lg:items-start lg:flex-col p-5 bg-white  rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-[#4640de]/30 overflow-hidden"
           whileHover={{ 
             y: -5,
             backgroundColor: "#4640de",
@@ -27,7 +27,7 @@ const Categorypage = () => {
 
           {/* Content */}
           <div className="flex flex-col gap-1 lg:gap-2">
-            <h3 className="text-lg lg:text-xl font-semibold text-gray-800 dark:text-white group-hover:text-white transition-colors duration-300">
+            <h3 className="text-lg lg:text-xl font-semibold text-gray-800  group-hover:text-white transition-colors duration-300">
               {item.name}
             </h3>
             <p className="flex items-center text-sm text-gray-600 dark:text-gray-300 group-hover:text-white/80 transition-colors duration-300">

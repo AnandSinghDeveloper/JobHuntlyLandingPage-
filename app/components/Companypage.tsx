@@ -43,7 +43,7 @@ const Companypage = () => {
       {companies.map((company, index) => (
         <motion.div
           key={company.id}
-          className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+          className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg transition-colors duration-300"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 0.7, y: 0 }}
           transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -60,8 +60,8 @@ const Companypage = () => {
             {company.icon}
           </div>
           {company.name && (
-            <Label className="text-lg font-medium mt-2 dark:text-white">
-              {company.name}
+            <Label className="text-lg font-medium mt-2 ">
+            
             </Label>
           )}
         </motion.div>
